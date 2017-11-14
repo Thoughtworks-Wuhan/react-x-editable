@@ -170,7 +170,7 @@ export default class Editable extends Component {
           content.push(<Text {...componetProps} {...this.state} />);
           break;
         case 'textarea':
-          content.push(<Textarea {...componetProps} {...this.state} placeholder={"Please input target number"} />);
+          content.push(<Textarea {...componetProps} {...this.state} />);
           break;
         case 'select':
           content.push(<Select {...componetProps} {...this.state} />);
