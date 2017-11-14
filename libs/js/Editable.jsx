@@ -24,7 +24,7 @@ export default class Editable extends Component {
       this.state = {
         dataType : props.dataType ? props.dataType : "text",
         name : props.name,
-        defalutText : props.defalutText,
+        defaultText : props.defaultText,
         mode : props.mode ? props.mode : "inline",
         disabled : props.disabled ? props.disabled : false,
         showButtons : props.showButtons != undefined ? props.showButtons : true,
@@ -170,7 +170,7 @@ export default class Editable extends Component {
           content.push(<Text {...componetProps} {...this.state} />);
           break;
         case 'textarea':
-          content.push(<Textarea {...componetProps} {...this.state} />);
+          content.push(<Textarea {...componetProps} {...this.state} placeholder={"Please input target number"} />);
           break;
         case 'select':
           content.push(<Select {...componetProps} {...this.state} />);
@@ -241,7 +241,7 @@ Editable.defaultProps = {
 Editable.propTypes = {
     dataType : PropTypes.string.isRequired,
     name : PropTypes.string.isRequired,
-    defalutText : PropTypes.string,
+    defaultText : PropTypes.string,
     mode : PropTypes.string,
     showButtons : PropTypes.bool,
     disabled : PropTypes.bool,
