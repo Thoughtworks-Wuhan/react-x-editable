@@ -24,6 +24,7 @@ export default class Editable extends Component {
       this.state = {
         dataType : props.dataType ? props.dataType : "text",
         name : props.name,
+        defalutText : props.defalutText,
         mode : props.mode ? props.mode : "inline",
         disabled : props.disabled ? props.disabled : false,
         showButtons : props.showButtons != undefined ? props.showButtons : true,
@@ -217,7 +218,7 @@ export default class Editable extends Component {
                   onClick={this.setEditable.bind(this, true)}
                   href="javascript:;"
                 >
-                  { this.getValueForAnchor() || 'empty' }
+                  { this.getValueForAnchor() || this.props.defalutText || 'empty' }
                 </a>
               )
             : null
@@ -240,6 +241,7 @@ Editable.defaultProps = {
 Editable.propTypes = {
     dataType : PropTypes.string.isRequired,
     name : PropTypes.string.isRequired,
+    defalutText : PropTypes.string,
     mode : PropTypes.string,
     showButtons : PropTypes.bool,
     disabled : PropTypes.bool,

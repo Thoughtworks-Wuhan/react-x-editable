@@ -104,6 +104,7 @@ export default class App extends Component {
                           name="usernameRequired"
                           dataType="text"
                           mode={"popup"}
+                          defalutText={"Please input baiyuan"}
                           title="Enter username"
                           placement="right"
                           showButtons={true}
