@@ -35,6 +35,7 @@ export default class Text extends Component {
   render(){
     return (
       <FormGroup controlId="formBasicText" validationState={this.props.validation.type} key={"FormGroup"+this.props.name}>
+        <span className="CurrencySymbol">$ </span>
         <FormControl
           key={"form-control"+this.props.name}
           type="text"

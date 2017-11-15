@@ -73,6 +73,7 @@ export default class App extends Component {
                             dataType="text"
                             mode="popup"
                             title="Please enter username"
+                            display={value => (`$${value}`)}
                             value={"ni3galave"}
                             placement="right"
                             showButtons={true}
