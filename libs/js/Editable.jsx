@@ -43,7 +43,7 @@ export default class Editable extends Component {
             optionsInline: props.inline ? props.inline : false,
             //Required for customize input
             customComponent: props.customComponent ? props.customComponent : null,
-            onInputChange: props.onInputChange ? props.onInputChange : null,
+            onValueDidUpdate: props.onValueDidUpdate ? props.onValueDidUpdate : null,
             //for internal use
             editable: false,
             valueUpdated: false,
@@ -97,6 +97,7 @@ export default class Editable extends Component {
             this.value = this.newValue;
             this.setEditable(false)
             this.setState({ valueUpdated: true });
+            this.props.onSubmit(this.value);
         }
     }
     onCancel = () => {
@@ -107,9 +108,9 @@ export default class Editable extends Component {
 
     setValueToAnchor(value, event) {
         this.newValue = value;
-        //To trigger onInputChange event:user defined
-        if (this.props.onInputChange) {
-            this.props.onInputChange(event);
+        //To trigger onValueDidUpdate event:user defined
+        if (this.props.onValueDidUpdate) {
+            this.props.onValueDidUpdate(event);
         }
     }
 
@@ -174,6 +175,7 @@ export default class Editable extends Component {
             onSubmit: this.onSubmit.bind(this),
             setEditable: this.setEditable.bind(this),
             validation: this.validation,
+            onValueWillUpdate: this.props.onValueWillUpdate,
         };
         const content = [];
         if (editable) {
@@ -264,7 +266,9 @@ Editable.propTypes = {
     disabled: PropTypes.bool,
     validate: PropTypes.func,
     display: PropTypes.func,
-    onInputChange: PropTypes.func,
+    onValueDidUpdate: PropTypes.func,
+    onValueWillUpdate: PropTypes.func,
+    onSubmit: PropTypes.func,
 
     // only used when mode is popup
     title: PropTypes.string,

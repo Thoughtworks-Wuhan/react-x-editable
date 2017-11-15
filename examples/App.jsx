@@ -72,6 +72,8 @@ export default class App extends Component {
                             name="username"
                             dataType="text"
                             mode="popup"
+                            onValueWillUpdate={value => (value.replace(/[^\d]/g,''))}
+                            onSubmit={value => (alert(value))}
                             title="Please enter username"
                             display={value => (`$${value}`)}
                             value={"ni3galave"}
