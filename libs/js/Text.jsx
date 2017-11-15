@@ -38,7 +38,7 @@ export default class Text extends Component {
         <span className="CurrencySymbol">$ </span>
         <FormControl
           key={"form-control"+this.props.name}
-          type="text"
+          type={this.props.inputType}
           placeholder=""
           bsSize="sm"
           value={this.state.value || ''}
