@@ -204,7 +204,7 @@ export default class Editable extends Component {
             content.push(this.getButtons());
             if (mode == 'popup') {
                 return (
-                    <div className={this.props.className}>
+                    <div>
                         <Overlay
                             rootClose={true}
                             onHide={() => {
@@ -213,7 +213,7 @@ export default class Editable extends Component {
                             show={editable}
                             target={() => ReactDOM.findDOMNode(this.editableAnchor)}
                             {...this.props}>
-                            <Popover id={"popover-positioned-" + placement} title={title} key={this.props.name}>
+                            <Popover className={this.props.className} id={"popover-positioned-" + placement} title={title} key={this.props.name}>
                                 {content}
                             </Popover>
                         </Overlay>
