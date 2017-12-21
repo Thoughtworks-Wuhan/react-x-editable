@@ -103,20 +103,18 @@ export default class App extends Component {
                   <tr>
                       <td>Empty text field, required</td>
                       <td>
-                        <Editable
-                          name="usernameRequired"
-                          dataType="text"
-                          mode={"popup"}
-                          defalutText={"Please input baiyuan"}
-                          title="Enter username"
-                          placement="right"
-                          showButtons={true}
-                          validate={(value) => {
-                            if(!value){
-                              return 'Required';
-                            }
-                          }}
-                        />
+                          <Editable
+                              dataType="text"
+                              inputType={'text'}
+                              display={value => (`$${value}`)}
+                              onValueWillUpdate={value => (AmountAbbr.numberWithCommas(value.replace(/[^\d]/g, '')))}
+                              mode="inline"
+                              value={this.props.amountFilterGate ? AmountAbbr.numberWithCommas(this.props.amountFilterGate) : undefined}
+                              defalutText="please input amount here"
+                              validate={value => (value.length >= 16)}
+                              onSubmit={value => this.props.setAmountFilterGate(parseInt(value.replace(/[^\d]/g, ''), 0))}
+                              showButtons
+                          />
                       <Panel collapsible expanded={this.state.emptyRequiredTextField} >
                           <pre> {`<Editable
     name="username"

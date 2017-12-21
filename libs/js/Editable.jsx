@@ -233,12 +233,12 @@ export default class Editable extends Component {
         return (
             <div className={editableContainerClass} key={this.props.name}>
                 {!(mode == 'inline' && editable)
-                    ? (<a ref={ref => this.editableAnchor = ref}
-                          onClick={this.setEditable.bind(this, true)}
-                          href="javascript:;"
+                    ? (<div className={'input_result'}><a ref={ref => this.editableAnchor = ref}
+                               onClick={this.setEditable.bind(this, true)}
+                               href="javascript:;"
                         >
                             {this.getValueForAnchor() || this.props.defalutText || 'empty'}
-                        </a>
+                        </a></div>
                     )
                     : null
                 }
