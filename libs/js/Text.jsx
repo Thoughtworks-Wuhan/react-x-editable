@@ -42,7 +42,7 @@ export default class Text extends Component {
           type={this.props.inputType}
           placeholder=""
           bsSize="sm"
-          autofocus
+          autoFocus
           value={this.state.value || ''}
           onChange={this.setValue.bind(this)}
           onBlur={this.onBlur.bind(this)}
