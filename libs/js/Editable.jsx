@@ -231,7 +231,7 @@ export default class Editable extends Component {
         } = this.state;
         const editableContainerClass = (disabled) ? "editable-disabled" : "editable-container";
         return (
-            <div className={editableContainerClass} key={this.props.name}>
+            <div className={`${editableContainerClass} ${this.props.className}`} key={this.props.name}>
                 {!(mode == 'inline' && editable)
                     ? (<div className={'input_result'}><a ref={ref => this.editableAnchor = ref}
                                onClick={this.setEditable.bind(this, true)}
