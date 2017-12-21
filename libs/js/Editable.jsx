@@ -204,7 +204,7 @@ export default class Editable extends Component {
             content.push(this.getButtons());
             if (mode == 'popup') {
                 return (
-                    <div>
+                    <div className={this.props.className}>
                         <Overlay
                             rootClose={true}
                             onHide={() => {
@@ -276,4 +276,5 @@ Editable.propTypes = {
     // for input type text
     bsInputClass: PropTypes.string,
     bsInputSize: PropTypes.string,
+    className: PropTypes.string,
 };
