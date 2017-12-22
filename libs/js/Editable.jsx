@@ -63,6 +63,7 @@ export default class Editable extends Component {
 
     setInitialValue = () => {
         const { dataType, options, value } = this.props;
+        console.log('editable value', value);
         if (dataType == "select" || dataType == "checklist") {
             if (options == null) {
                 throw("Please specify options for " + dataType + " data type");
