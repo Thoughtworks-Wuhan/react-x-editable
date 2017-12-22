@@ -55,6 +55,7 @@ export default class Editable extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setEditable(false);
+        console.log('editable', nextProps.value, this.value);
         if (nextProps.value != this.value) {
             this.setInitialValue();
         }

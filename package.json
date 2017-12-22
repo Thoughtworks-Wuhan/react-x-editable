@@ -2,7 +2,7 @@
   "name": "react-x-editable",
   "version": "v0.0.8-beta",
   "description": "React X editable using react-bootstrap.",
-  "main": "dist/editable",
+  "main": "libs/js/Editable.jsx",
   "repository": {
     "type": "git",
    "url": "git+https://github.com/ni3galave/react-x-editable.git"
