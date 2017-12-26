@@ -55,7 +55,6 @@ export default class Editable extends Component {
 
     componentWillReceiveProps(nextProps) {
         this.setEditable(false);
-        console.log('editable', nextProps.value, this.value);
         if (nextProps.value != this.value) {
             this.props = nextProps;
             this.setInitialValue();
@@ -238,7 +237,6 @@ export default class Editable extends Component {
                 {!(mode == 'inline' && editable)
                     ? (<div className={'input_result'}><a ref={ref => this.editableAnchor = ref}
                                onClick={this.setEditable.bind(this, true)}
-                               href="javascript:;"
                         >
                             {this.getValueForAnchor() || this.props.defalutText || 'empty'}
                         </a></div>
